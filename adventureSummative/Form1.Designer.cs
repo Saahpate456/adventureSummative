@@ -40,7 +40,7 @@
             // 
             this.optionButton1.Location = new System.Drawing.Point(143, 287);
             this.optionButton1.Name = "optionButton1";
-            this.optionButton1.Size = new System.Drawing.Size(81, 45);
+            this.optionButton1.Size = new System.Drawing.Size(84, 45);
             this.optionButton1.TabIndex = 0;
             this.optionButton1.Text = "option1";
             this.optionButton1.UseVisualStyleBackColor = true;
@@ -52,9 +52,8 @@
             this.outputLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(100, 73);
             this.outputLabel.Name = "outputLabel";
-            this.outputLabel.Size = new System.Drawing.Size(108, 19);
+            this.outputLabel.Size = new System.Drawing.Size(0, 19);
             this.outputLabel.TabIndex = 1;
-            this.outputLabel.Text = "Output text";
             // 
             // optionButton2
             // 
@@ -64,6 +63,7 @@
             this.optionButton2.TabIndex = 2;
             this.optionButton2.Text = "option2";
             this.optionButton2.UseVisualStyleBackColor = true;
+            this.optionButton2.Click += new System.EventHandler(this.optionButton2_Click);
             // 
             // titleLabel
             // 
@@ -71,9 +71,10 @@
             this.titleLabel.Font = new System.Drawing.Font("Cascadia Code SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(303, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(180, 28);
+            this.titleLabel.Size = new System.Drawing.Size(204, 28);
             this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "Get to the End";
+            this.titleLabel.Text = "An Odd Adventure";
+            this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
             // optionOutput1
             // 
@@ -83,7 +84,6 @@
             this.optionOutput1.Size = new System.Drawing.Size(78, 13);
             this.optionOutput1.TabIndex = 4;
             this.optionOutput1.Text = "option output 1";
-            this.optionOutput1.Click += new System.EventHandler(this.label1_Click);
             // 
             // optionOutput2
             // 

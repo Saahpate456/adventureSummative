@@ -14,8 +14,6 @@ using System.Windows.Forms;
 namespace adventureSummative
 {
     /// <summary>
-    /// Finish button 1
-    /// 
     /// I have to finish button 2
     /// 
     /// I have to add a button 3 for one option
@@ -32,7 +30,6 @@ namespace adventureSummative
     /// 
     /// I have to clean up code and check it over
     /// 
-    /// I have to submit everything on time
     /// </summary>
     public partial class Form1 : Form
     {
@@ -52,7 +49,7 @@ namespace adventureSummative
             optionButton1.Text = "";
             int chance = randGen.Next(1, 101);
 
-            if (lives < 0)
+            if (lives <= 0)
             {
                 outputLabel.Text = "You have run out of lives,\n thanks for playing!";
                 Thread.Sleep(5000);
@@ -164,7 +161,7 @@ namespace adventureSummative
                 page = 1;
             }
 
-            //from here
+
 
             else if (page == 4)
             {
@@ -284,11 +281,6 @@ namespace adventureSummative
 
             switch (page)
             {
-                case 0:
-                    outputLabel.Text = "";
-                    optionOutput1.Text = "";
-
-                    break;
                 case 1:
                     outputLabel.Text = $"you have {lives} lives left.";
                     optionOutput1.Text = "Ok";
@@ -349,8 +341,8 @@ namespace adventureSummative
 
                     break;
                 case 22:
-                    outputLabel.Text = "You win the fight and the strange man tells you that you have been transported\n into a different realm where you must find a portal that\n leads back to Earth if you wish to return.\n\r\n\r\n\n" +
-                        "He shows you 2 portals.\r\n\r\nPortal 1 goes\n to a world where you have to fight your way through\n hundreds of monsters in order to get to another portal.\nr\n\r\nBeing unsure about portal 2, the man says that\n there is a 50% chance that it leads back to Earth.";
+                    outputLabel.Text = "You win the fight and the strange man tells you that you have been transported\n into a different realm where you must find a portal that\n leads back to Earth if you wish to return.\n" +
+                        "He shows you 2 portals.\nPortal 1 goes\n to a world where you have to fight your way through\n hundreds of monsters in order to get to another portal.\nBeing unsure about portal 2, the man says that\n there is a 50% chance that it leads back to Earth.";
                     optionOutput1.Text = "Portal 1";
 
 
@@ -383,7 +375,7 @@ namespace adventureSummative
 
                     break;
                 case 7:
-                    outputLabel.Text = "You meet a guy who buys you a drink and you become friends.\n\r\n\r\nYou got poisoned and you died. Would you like to play again?";
+                    outputLabel.Text = "You meet a guy who buys you a drink and you become friends.\nYou got poisoned and you died. Would you like to play again?";
                     optionOutput1.Text = "Yes";
 
 
@@ -401,8 +393,8 @@ namespace adventureSummative
 
                     break;
                 case 10:
-                    outputLabel.Text = "";
-                    optionOutput1.Text = "";
+                    outputLabel.Text = "You try to run to the portal, but the portal guard stops you and tells you to choose between 2 magic pills.\n One will let you survive and go home, the other will kill you instantly. Which one will u choose?";
+                    optionOutput1.Text = "Blue";
 
 
                     break;
@@ -412,6 +404,13 @@ namespace adventureSummative
         private void optionButton2_Click(object sender, EventArgs e)
         {
             optionButton2.Text = "";
+
+            if (lives <= 0)
+            {
+                outputLabel.Text = "You have run out of lives,\n thanks for playing!";
+                Thread.Sleep(5000);
+                Application.Exit();
+            }
 
             if (page == 0)
             {
@@ -508,105 +507,118 @@ namespace adventureSummative
             }
 
 
-            //switch (page)
-            //{
-            //    case 0:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
-
-            //        break;
-            //    case 1:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+            switch (page)
+            {
+                case 1:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 2:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 2:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 3:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 3:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 4:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 4:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 5:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 6:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 6:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 10:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 7:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 16:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 8:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 17:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 9:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 54:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 10:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 50:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 11:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 53:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 12:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 5:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 13:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 8:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 14:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 9:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //    case 15:
-            //        outputLabel.Text = ;
-            //        optionOutput1.Text = ;
+                    break;
+                case 12:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
 
 
-            //        break;
-            //}
-        }
+                    break;
+                case 21:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
+
+
+                    break;
+                case 22:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
+
+
+                    break;
+                case 23:
+                    outputLabel.Text = "";
+                    optionOutput2.Text = "";
+
+
+                    break;
+            }
+    }
 
         private void titleLabel_Click(object sender, EventArgs e)
         {

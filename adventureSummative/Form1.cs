@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace adventureSummative
@@ -38,14 +29,17 @@ namespace adventureSummative
         bool item = false;
 
         Random randGen = new Random();
-        
-    public Form1()
+
+        public Form1()
         {
             InitializeComponent();
+
         }
 
         private void optionButton1_Click(object sender, EventArgs e)
         {
+
+
             optionButton1.Text = "";
             int chance = randGen.Next(1, 101);
 
@@ -55,7 +49,6 @@ namespace adventureSummative
                 Thread.Sleep(5000);
                 Application.Exit();
             }
-
 
 
             if (page == 0)
@@ -326,12 +319,12 @@ namespace adventureSummative
                     outputLabel.Text = "You have respawned!";
                     optionOutput1.Text = "Continue";
                     lives = lives - 1;
-                    
+
                     break;
                 case 12:
                     outputLabel.Text = "You find a magic sword in the bag. Do you fight or run?";
                     optionOutput1.Text = "Run";
-                    
+
 
                     break;
                 case 20:
@@ -403,6 +396,7 @@ namespace adventureSummative
 
         private void optionButton2_Click(object sender, EventArgs e)
         {
+
             optionButton2.Text = "";
 
             if (lives <= 0)
@@ -469,7 +463,7 @@ namespace adventureSummative
                 page = 53;
             }
 
-            
+
 
             else if (page == 5)
             {
@@ -483,7 +477,7 @@ namespace adventureSummative
             {
                 page = 53;
             }
-            
+
 
             else if (page == 9)
             {
@@ -510,117 +504,131 @@ namespace adventureSummative
             switch (page)
             {
                 case 1:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = $"you have {lives} lives left.";
+                    optionOutput2.Text = "Continue";
+
+                    Thread.Sleep(3000);
 
 
                     break;
                 case 2:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You wake up in the middle of nowhere in a strange realm different to your own.\n You begin to walk around and stumble upon a small bag. Would you like to pick it up?";
+                    optionOutput2.Text = "Yes";
 
 
                     break;
                 case 3:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You are starving trying to find food. You walk 1 kilometer North and \nthankfully you find a village. Will you explore it or will you continue walking?";
+                    optionOutput2.Text = "Explore";
 
 
                     break;
                 case 4:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You explore the village and stumble upon an elder, he explains that in order to get back to Earth,\n you must find a certain portal. \r\n\r\nYou see a bar and a tower, which one do you visit.";
+                    optionOutput2.Text = "Tower";
 
 
                     break;
                 case 6:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You feel a strong force coming from the other side of the door. Its a massive portal with someone guarding it.";
+                    optionOutput2.Text = "Yes";
 
 
                     break;
                 case 10:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You try to run to the portal, \nbut the portal guard stops you and tells you to choose between 2 magic pills. \nOne will let you survive and go home, the other will\n kill you instantly. Which one will u choose?";
+                    optionOutput2.Text = "Red";
 
 
                     break;
                 case 16:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
-
+                    outputLabel.Text = "You die from the magic pill.\r\nWould you like to play again?";
+                    optionOutput2.Text = "No";
+                    
 
                     break;
                 case 17:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "The magic pill healed you of all wounds. You safely go through the portal and arrive back on Earth.";
+                    optionOutput2.Text = "Continue";
 
 
                     break;
                 case 54:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "Congratulations! You finally made it to the end!";
+                    optionOutput2.Text = "Continue";
+                    lives = lives + 3;
 
 
                     break;
                 case 50:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "Do you want to play again?";
+                    optionOutput2.Text = "Yes";
 
+                    break;
+                case 52:
+                    outputLabel.Text = "You have respawned!";
+                    optionOutput2.Text = "Continue";
+                    
 
                     break;
                 case 53:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "Thanks for playing!";
+                    Thread.Sleep(3000);
+                    Application.Exit();
 
 
                     break;
                 case 5:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You are attacked by a strange man. Will you fight?";
+                    optionOutput2.Text = "Run";
 
 
                     break;
                 case 8:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You tried to run away, in your attempt, you tripped. The strange man killed you. Would you like to play again?";
+                    optionOutput2.Text = "No";
+                    
 
 
                     break;
                 case 9:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You decide to fight, however, the strange man pulls out a knife. What do you decide to do?";
+                    optionOutput2.Text = "Search Bag";
 
 
                     break;
                 case 12:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You find a magic sword in the bag. Do you fight?";
+                    optionOutput2.Text = "Fight";
 
 
                     break;
                 case 21:
-                    outputLabel.Text = "";
-                    optionOutput2.Text = "";
+                    outputLabel.Text = "You tried to fight but missed the finishing attack and died. Would you like to play again?";
+                    optionOutput2.Text = "No";
+                    
 
 
                     break;
                 case 22:
-                    outputLabel.Text = "";
+                    outputLabel.Text = "You win the fight and the strange man tells you that you have been transported \ninto a different realm where you must find a portal that leads back to Earth if you wish to return.\n\r\n\r\nHe shows you 2 portals.\r\n\r\nPortal 1 goes to a world where you have to fight your way through hundreds of monsters in order to get to \nanother portal.\r\n\r\nBeing unsure about portal 2, the man says that there is a \n50% chance that it leads back to Earth.";
                     optionOutput2.Text = "";
 
 
                     break;
                 case 23:
-                    outputLabel.Text = "";
+                    outputLabel.Text = "You entered the new realm and defeated many monsters but then you died falling into the void. Would you like to play again?";
                     optionOutput2.Text = "";
+                    Thread.Sleep(3000);
+                    Application.Exit();
 
 
                     break;
-            }
-    }
 
-        private void titleLabel_Click(object sender, EventArgs e)
+            }
+        }
+
+        private void extraButton_Click(object sender, EventArgs e)
         {
 
         }

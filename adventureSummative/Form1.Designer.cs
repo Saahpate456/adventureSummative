@@ -39,9 +39,13 @@
             this.background3 = new System.Windows.Forms.PictureBox();
             this.background2 = new System.Windows.Forms.PictureBox();
             this.background1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.backgroundImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.background3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
             // optionButton1
@@ -91,7 +95,6 @@
             this.optionOutput1.Name = "optionOutput1";
             this.optionOutput1.Size = new System.Drawing.Size(0, 13);
             this.optionOutput1.TabIndex = 4;
-            this.optionOutput1.Click += new System.EventHandler(this.optionOutput1_Click);
             // 
             // optionOutput2
             // 
@@ -100,7 +103,6 @@
             this.optionOutput2.Name = "optionOutput2";
             this.optionOutput2.Size = new System.Drawing.Size(0, 13);
             this.optionOutput2.TabIndex = 5;
-            this.optionOutput2.Click += new System.EventHandler(this.optionOutput2_Click);
             // 
             // extraButton
             // 
@@ -118,7 +120,6 @@
             this.extraOutput.Name = "extraOutput";
             this.extraOutput.Size = new System.Drawing.Size(0, 13);
             this.extraOutput.TabIndex = 7;
-            this.extraOutput.Click += new System.EventHandler(this.extraOutput_Click);
             // 
             // background3
             // 
@@ -128,7 +129,6 @@
             this.background3.Size = new System.Drawing.Size(396, 188);
             this.background3.TabIndex = 8;
             this.background3.TabStop = false;
-            this.background3.Click += new System.EventHandler(this.background3_Click);
             // 
             // background2
             // 
@@ -148,11 +148,29 @@
             this.background1.TabIndex = 10;
             this.background1.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(135, 269);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // backgroundImage
+            // 
+            this.backgroundImage.Location = new System.Drawing.Point(529, 261);
+            this.backgroundImage.Name = "backgroundImage";
+            this.backgroundImage.Size = new System.Drawing.Size(268, 188);
+            this.backgroundImage.TabIndex = 12;
+            this.backgroundImage.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.backgroundImage);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.optionButton1);
             this.Controls.Add(this.optionOutput1);
             this.Controls.Add(this.optionOutput2);
@@ -169,6 +187,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.background3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backgroundImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +207,8 @@
         private System.Windows.Forms.PictureBox background3;
         private System.Windows.Forms.PictureBox background2;
         private System.Windows.Forms.PictureBox background1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox backgroundImage;
     }
 }
 

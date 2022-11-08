@@ -5,10 +5,7 @@ using System.Windows.Forms;
 namespace adventureSummative
 {
     /// <summary> 
-    /// 
     /// I have to add a button 3 for one option
-    /// 
-    /// I have to generate the page 10 randoms
     /// 
     /// I have to check to see if the storyline works
     /// 
@@ -24,7 +21,7 @@ namespace adventureSummative
     {
         int page = 0;
         int lives = 3;
-        bool item;
+        bool item = false;
 
         Random randGen = new Random();
 
@@ -52,6 +49,7 @@ namespace adventureSummative
             else if (page == 1)
             {
                 page = 2;
+                item = false;
             }
             else if (page == 2)
             {
@@ -65,6 +63,8 @@ namespace adventureSummative
             {
                 page = 9;
             }
+            //
+
             else if (page == 9)
             {
                 page = 14;
@@ -92,6 +92,7 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
@@ -121,13 +122,14 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
             {
                 page = 1;
             }
-            ///Rand 70%
+            ///Rand 80%
             if (page == 22 && chance > 81)
             {
                 page = 25;
@@ -156,6 +158,7 @@ namespace adventureSummative
             else if (page == 22 && chance > 1 && chance < 71)
             {
                 page = 26;
+                lives = lives - 1;
             }
 
 
@@ -198,6 +201,7 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
@@ -227,6 +231,7 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
@@ -256,15 +261,40 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
             {
                 page = 1;
             }
-            else if (page == 10)
+            //Blue random chance 70% - 30%
+            if (page == 10 && chance > 1 && chance < 71)
+            {
+                page = 18;
+
+                //25% chance (respawn)
+                if (page == 50 && chance > 1 && chance < 25)
+                {
+                    page = 51;
+
+                    if (page == 51)
+                    {
+                        outputLabel.Text = "You can't respawn anymore.";
+                        Thread.Sleep(3000);
+                        Application.Exit();
+                    }
+                }
+                else if (page == 50 && chance > 25)
+                {
+                    page = 52;
+                    lives = lives - 1;
+                }
+            }
+            else if (page == 10 && chance > 71)
             {
                 page = 19;
+
             }
             else if (page == 19)
             {
@@ -305,6 +335,7 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
@@ -354,6 +385,7 @@ namespace adventureSummative
             else if (page == 50 && chance > 25)
             {
                 page = 52;
+                lives = lives - 1;
             }
 
             else if (page == 52)
@@ -367,6 +399,7 @@ namespace adventureSummative
                     outputLabel.Text = "";
                     optionButton1.Text = "";
                     optionButton2.Text = "";
+                    backgroundImage.Image = Properties.Resources.
                     break;
                 case 1:
                     outputLabel.Text = $"you have {lives} lives left.";
@@ -395,6 +428,7 @@ namespace adventureSummative
                     outputLabel.Text = "You decide to fight, however, the strange man pulls out a knife.\n What do you decide to do?";
                     optionOutput1.Text = "Continue to fight";
                     optionOutput2.Text = "Search Bag";
+                    extraOutput.Text = "Run";
                     break;
                 case 14:
                     outputLabel.Text = "You tried to fight him but he killed you right away.";
@@ -427,6 +461,7 @@ namespace adventureSummative
                         "He shows you 2 portals.\nPortal 1 goes\n to a world where you have to fight your way through\n hundreds of monsters in order to get to another portal.\nBeing unsure about portal 2, the man says that\n there is a 50% chance that it leads back to Earth.";
                     optionOutput1.Text = "Portal 1";
                     optionOutput2.Text = "Portal 2";
+                    extraOutput.Text = "None";
                     break;
                 case 26:
                     outputLabel.Text = "You got through the portal safely and made it back to Earth.";
@@ -492,6 +527,8 @@ namespace adventureSummative
             else if (page == 1)
             {
                 page = 2;
+                item = true;
+                optionButton2.Enabled = true;
             }
             else if (page == 2)
             {
@@ -509,18 +546,30 @@ namespace adventureSummative
             {
                 page = 10;
             }
-            else if (page == 10)
+            //Red random chance 30% - 70%
+            if (page == 10 && chance > 1 && chance < 30)
             {
                 page = 16;
+
+                //Play agian screen
+                if (page == 50)
+                {
+                    page = 53;
+
+                    if (page == 53)
+                    {
+                        outputLabel.Text = "You can't respawn anymore.";
+                        Thread.Sleep(3000);
+                        Application.Exit();
+                    }
+                }
+                else if (page == 10 && chance > 30)
+                {
+                    page = 17;
+                    lives = lives - 1;
+                }
             }
-            else if (page == 16)
-            {
-                page = 50;
-            }
-            else if (page == 50)
-            {
-                page = 53;
-            }
+            
             else if (page == 10)
             {
                 page = 17;
@@ -549,9 +598,16 @@ namespace adventureSummative
             {
                 page = 53;
             }
+            //item
+            if (item == false)
+            {
+                optionButton2.Enabled = false;
+            }
             else if (page == 9)
             {
                 page = 12;
+                item = true;
+                optionButton2.Enabled = true;
             }
             ///25% rand
             if (page == 12 && chance > 81)
@@ -675,6 +731,7 @@ namespace adventureSummative
                     outputLabel.Text = "You decide to fight, however, the strange man\n pulls out a knife. What do you decide to do?";
                     optionOutput2.Text = "Search Bag";
                     optionOutput1.Text = "Continue to Fight";
+                    extraOutput.Text = "Run";
                     break;
                 case 12:
                     outputLabel.Text = "You find a magic sword in the bag.\n Do you fight?";
@@ -691,6 +748,7 @@ namespace adventureSummative
                     outputLabel.Text = "You win the fight and the strange man tells\n you that you have been transported \ninto a different realm where you must find a portal that leads\n back to Earth if you wish to return. He shows you 2 portals.\nPortal 1 goes to a world where you have to fight your way\n through hundreds of monsters in order to get to another portal.\nBeing unsure about portal 2, the man says that there is a \n50% chance that it leads back to Earth.";
                     optionOutput2.Text = "Portal 1";
                     optionOutput1.Text = "Portal 2";
+                    extraOutput.Text = "None";
                     break;
                 case 23:
                     outputLabel.Text = "You entered the new realm and defeated many monsters but then you died\n falling into the void. Would you like to play again?";
@@ -702,27 +760,31 @@ namespace adventureSummative
 
         private void extraButton_Click(object sender, EventArgs e)
         {
+            if (page == 9)
+            {
+                page = 13;
+            }
+            if (page == 22)
+            {
+                page = 24;
+            }
 
-        }
-
-        private void background3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void extraOutput_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void optionOutput2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void optionOutput1_Click(object sender, EventArgs e)
-        {
-
+            switch (page)
+            {
+                case 9:
+                    outputLabel.Text = "You decide to fight, however, the strange man\n pulls out a knife. What do you decide to do?";
+                    optionOutput1.Text = "Continue to fight";
+                    optionOutput2.Text = "Search Bag";
+                    extraOutput.Text = "Run";
+                    break;
+                case 22:
+                    outputLabel.Text = "You leave but don't find any food which results\n in you starving to death. Would you like to play again?";
+                    optionOutput2.Text = "Portal 1";
+                    optionOutput1.Text = "Portal 2";
+                    extraOutput.Text = "None";
+                    break;
+                    
+            }
         }
     }
 }

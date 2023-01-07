@@ -5,11 +5,9 @@ using System.Windows.Forms;
 namespace adventureSummative
 {
     /// <summary> 
-    /// I have to add a button 3 for one option
-    /// 
-    /// I have to check to see if the storyline works
-    /// 
     /// Make sure item works
+    /// 
+    /// Fix death screen for example page 21
     /// 
     /// I have to make sure that all images and sounds are added for each of the scenes
     ///     *EXTRA* I have to make sure that the lives are displayed through images throughout the story
@@ -21,7 +19,7 @@ namespace adventureSummative
     {
         int page = 0;
         int lives = 3;
-        bool item = false;
+        bool item;
 
         Random randGen = new Random();
 
@@ -49,7 +47,6 @@ namespace adventureSummative
             else if (page == 1)
             {
                 page = 2;
-                item = false;
             }
             else if (page == 2)
             {
@@ -63,8 +60,6 @@ namespace adventureSummative
             {
                 page = 9;
             }
-            //
-
             else if (page == 9)
             {
                 page = 14;
@@ -76,18 +71,6 @@ namespace adventureSummative
             else if (page == 15)
             {
                 page = 50;
-            }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
             }
             else if (page == 50 && chance > 25)
             {
@@ -107,18 +90,6 @@ namespace adventureSummative
             {
                 page = 50;
             }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
-            }
             else if (page == 50 && chance > 25)
             {
                 page = 52;
@@ -130,7 +101,7 @@ namespace adventureSummative
                 page = 1;
             }
             ///Rand 80%
-            if (page == 22 && chance > 81)
+            else if (page == 22 && chance > 81)
             {
                 page = 25;
 
@@ -186,18 +157,6 @@ namespace adventureSummative
             {
                 page = 50;
             }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
-            }
             else if (page == 50 && chance > 25)
             {
                 page = 52;
@@ -215,18 +174,6 @@ namespace adventureSummative
             else if (page == 7)
             {
                 page = 50;
-            }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
             }
             else if (page == 50 && chance > 25)
             {
@@ -246,18 +193,6 @@ namespace adventureSummative
             {
                 page = 50;
             }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
-            }
             else if (page == 50 && chance > 25)
             {
                 page = 52;
@@ -269,7 +204,7 @@ namespace adventureSummative
                 page = 1;
             }
             //Blue random chance 70% - 30%
-            if (page == 10 && chance > 1 && chance < 71)
+            else if (page == 10 && chance > 1 && chance < 71)
             {
                 page = 18;
 
@@ -320,18 +255,6 @@ namespace adventureSummative
             {
                 page = 50;
             }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
-            }
             else if (page == 50 && chance > 25)
             {
                 page = 52;
@@ -370,18 +293,6 @@ namespace adventureSummative
             {
                 page = 50;
             }
-            ///25% rand
-            if (page == 50 && chance > 1 && chance < 25)
-            {
-                page = 51;
-
-                if (page == 51)
-                {
-                    outputLabel.Text = "You can't respawn anymore.";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
-            }
             else if (page == 50 && chance > 25)
             {
                 page = 52;
@@ -399,7 +310,6 @@ namespace adventureSummative
                     outputLabel.Text = "";
                     optionButton1.Text = "";
                     optionButton2.Text = "";
-                    backgroundImage.Image = Properties.Resources.
                     break;
                 case 1:
                     outputLabel.Text = $"you have {lives} lives left.";
@@ -519,7 +429,6 @@ namespace adventureSummative
                 Thread.Sleep(5000);
                 Application.Exit();
             }
-
             if (page == 0)
             {
                 page = 53;
@@ -527,8 +436,6 @@ namespace adventureSummative
             else if (page == 1)
             {
                 page = 2;
-                item = true;
-                optionButton2.Enabled = true;
             }
             else if (page == 2)
             {
@@ -537,6 +444,7 @@ namespace adventureSummative
             else if (page == 3)
             {
                 page = 4;
+                
             }
             else if (page == 4)
             {
@@ -547,7 +455,7 @@ namespace adventureSummative
                 page = 10;
             }
             //Red random chance 30% - 70%
-            if (page == 10 && chance > 1 && chance < 30)
+            else if (page == 10 && chance > 1 && chance < 30)
             {
                 page = 16;
 
@@ -569,7 +477,6 @@ namespace adventureSummative
                     lives = lives - 1;
                 }
             }
-            
             else if (page == 10)
             {
                 page = 17;
@@ -598,36 +505,28 @@ namespace adventureSummative
             {
                 page = 53;
             }
-            //item
-            if (item == false)
-            {
-                optionButton2.Enabled = false;
-            }
             else if (page == 9)
             {
                 page = 12;
-                item = true;
-                optionButton2.Enabled = true;
             }
             ///25% rand
-            if (page == 12 && chance > 81)
+            else if (page == 12 && chance > 81)
             {
                 page = 21;
-
-                if (page == 21)
-                {
-                    page = 50;
-                }
-                else if (page == 50)
-                {
-                    page = 53;
-                }
-                else if (page == 53)
-                {
-                    outputLabel.Text = "Thanks for playing!";
-                    Thread.Sleep(3000);
-                    Application.Exit();
-                }
+            }
+            else if (page == 21)
+            {
+                page = 50;
+            }
+            else if (page == 50)
+            {
+                page = 53;
+            }
+            else if (page == 53)
+            {
+                outputLabel.Text = "Thanks for playing!";
+                Thread.Sleep(3000);
+                Application.Exit();
             }
             else if (page == 12 && chance > 1 && chance < 81)
             {
@@ -691,7 +590,7 @@ namespace adventureSummative
                 case 17:
                     outputLabel.Text = "The magic pill healed you of all wounds.\n You safely go through the portal and arrive back on Earth.";
                     optionOutput2.Text = "Continue";
-                    optionOutput2.Text = "";
+                    optionOutput1.Text = "";
                     break;
                 case 54:
                     outputLabel.Text = "Congratulations! You finally made it to the end!";
@@ -737,7 +636,11 @@ namespace adventureSummative
                     outputLabel.Text = "You find a magic sword in the bag.\n Do you fight?";
                     optionOutput2.Text = "Fight";
                     optionOutput1.Text = "Run";
-                    
+                    break;
+                case 13:
+                    outputLabel.Text = "You tried to run away, in your attempt, you tripped. The strange man killed you. Would you like to play again?";
+                    optionOutput2.Text = "Continue";
+                    optionOutput1.Text = "";
                     break;
                 case 21:
                     outputLabel.Text = "You tried to fight but missed the finishing attack and died.\n Would you like to play again?";
@@ -764,6 +667,10 @@ namespace adventureSummative
             {
                 page = 13;
             }
+            else if (page == 13)
+            {
+                page = 27;
+            }
             if (page == 22)
             {
                 page = 24;
@@ -777,6 +684,22 @@ namespace adventureSummative
                     optionOutput2.Text = "Search Bag";
                     extraOutput.Text = "Run";
                     break;
+                case 13:
+                    outputLabel.Text = "You tried to run away, in your attempt, you tripped. \n" +
+                        "The strange man killed you. \nYou can't play again.";
+                    optionOutput1.Text = "End";
+                    optionOutput1.Text = "";
+                    extraOutput.Text = "";
+                    break;
+                case 27:
+                    outputLabel.Text = "You tried to run away, in your attempt, you tripped. \n" +
+                        "The strange man killed you. \nYou can't play again.";
+                    optionOutput1.Text = "End";
+                    optionOutput1.Text = "";
+                    extraOutput.Text = "";
+                    Thread.Sleep(3000);
+                    Application.Exit();
+                    break;
                 case 22:
                     outputLabel.Text = "You leave but don't find any food which results\n in you starving to death. Would you like to play again?";
                     optionOutput2.Text = "Portal 1";
@@ -785,6 +708,11 @@ namespace adventureSummative
                     break;
                     
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

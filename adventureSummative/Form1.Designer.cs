@@ -36,21 +36,15 @@
             this.optionOutput2 = new System.Windows.Forms.Label();
             this.extraButton = new System.Windows.Forms.Button();
             this.extraOutput = new System.Windows.Forms.Label();
-            this.background3 = new System.Windows.Forms.PictureBox();
             this.background2 = new System.Windows.Forms.PictureBox();
             this.background1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.backgroundImage = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.background3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
             // optionButton1
             // 
-            this.optionButton1.Location = new System.Drawing.Point(143, 271);
+            this.optionButton1.Location = new System.Drawing.Point(41, 260);
             this.optionButton1.Name = "optionButton1";
             this.optionButton1.Size = new System.Drawing.Size(84, 45);
             this.optionButton1.TabIndex = 0;
@@ -61,6 +55,7 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
+            this.outputLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.outputLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputLabel.Location = new System.Drawing.Point(21, 59);
             this.outputLabel.Name = "outputLabel";
@@ -70,7 +65,7 @@
             // 
             // optionButton2
             // 
-            this.optionButton2.Location = new System.Drawing.Point(143, 336);
+            this.optionButton2.Location = new System.Drawing.Point(41, 311);
             this.optionButton2.Name = "optionButton2";
             this.optionButton2.Size = new System.Drawing.Size(84, 45);
             this.optionButton2.TabIndex = 2;
@@ -81,6 +76,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
+            this.titleLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.titleLabel.Font = new System.Drawing.Font("Cascadia Code SemiLight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(303, 9);
             this.titleLabel.Name = "titleLabel";
@@ -91,7 +87,7 @@
             // optionOutput1
             // 
             this.optionOutput1.AutoSize = true;
-            this.optionOutput1.Location = new System.Drawing.Point(253, 287);
+            this.optionOutput1.Location = new System.Drawing.Point(142, 276);
             this.optionOutput1.Name = "optionOutput1";
             this.optionOutput1.Size = new System.Drawing.Size(0, 13);
             this.optionOutput1.TabIndex = 4;
@@ -99,14 +95,14 @@
             // optionOutput2
             // 
             this.optionOutput2.AutoSize = true;
-            this.optionOutput2.Location = new System.Drawing.Point(253, 352);
+            this.optionOutput2.Location = new System.Drawing.Point(142, 341);
             this.optionOutput2.Name = "optionOutput2";
             this.optionOutput2.Size = new System.Drawing.Size(0, 13);
             this.optionOutput2.TabIndex = 5;
             // 
             // extraButton
             // 
-            this.extraButton.Location = new System.Drawing.Point(143, 393);
+            this.extraButton.Location = new System.Drawing.Point(41, 362);
             this.extraButton.Name = "extraButton";
             this.extraButton.Size = new System.Drawing.Size(84, 45);
             this.extraButton.TabIndex = 6;
@@ -116,19 +112,10 @@
             // extraOutput
             // 
             this.extraOutput.AutoSize = true;
-            this.extraOutput.Location = new System.Drawing.Point(253, 409);
+            this.extraOutput.Location = new System.Drawing.Point(142, 398);
             this.extraOutput.Name = "extraOutput";
             this.extraOutput.Size = new System.Drawing.Size(0, 13);
             this.extraOutput.TabIndex = 7;
-            // 
-            // background3
-            // 
-            this.background3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.background3.Location = new System.Drawing.Point(127, 261);
-            this.background3.Name = "background3";
-            this.background3.Size = new System.Drawing.Size(396, 188);
-            this.background3.TabIndex = 8;
-            this.background3.TabStop = false;
             // 
             // background2
             // 
@@ -148,29 +135,11 @@
             this.background1.TabIndex = 10;
             this.background1.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(135, 269);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // backgroundImage
-            // 
-            this.backgroundImage.Location = new System.Drawing.Point(529, 261);
-            this.backgroundImage.Name = "backgroundImage";
-            this.backgroundImage.Size = new System.Drawing.Size(268, 188);
-            this.backgroundImage.TabIndex = 12;
-            this.backgroundImage.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.backgroundImage);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.optionButton1);
             this.Controls.Add(this.optionOutput1);
             this.Controls.Add(this.optionOutput2);
@@ -181,14 +150,11 @@
             this.Controls.Add(this.background2);
             this.Controls.Add(this.extraButton);
             this.Controls.Add(this.optionButton2);
-            this.Controls.Add(this.background3);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.background3)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.background2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backgroundImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,11 +170,8 @@
         private System.Windows.Forms.Label optionOutput2;
         private System.Windows.Forms.Button extraButton;
         private System.Windows.Forms.Label extraOutput;
-        private System.Windows.Forms.PictureBox background3;
         private System.Windows.Forms.PictureBox background2;
         private System.Windows.Forms.PictureBox background1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox backgroundImage;
     }
 }
 
